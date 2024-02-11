@@ -1,0 +1,1284 @@
+entity_alternatives:
+- - constraint
+  - - fix_gas_CHP
+  - gas_CHP
+  - true
+- - constraint
+  - - fix_water_flow
+  - hydro
+  - true
+- - link
+  - - north_east
+  - north_east
+  - true
+- - link
+  - - west_east
+  - west_east
+  - true
+- - link
+  - - west_north
+  - west_north
+  - true
+- - link
+  - - west_south
+  - west_south
+  - true
+- - node
+  - - CH4
+  - CH4_node
+  - true
+- - node
+  - - CH4_east
+  - CH4_network
+  - true
+- - node
+  - - CH4_north
+  - CH4_network
+  - true
+- - node
+  - - CH4_south
+  - CH4_network
+  - true
+- - node
+  - - CH4_west
+  - CH4_network
+  - true
+- - node
+  - - DH_north
+  - DH
+  - true
+- - node
+  - - H2
+  - hydrogen
+  - true
+- - node
+  - - battery_south
+  - battery
+  - true
+- - node
+  - - building_north
+  - building
+  - true
+- - node
+  - - east
+  - east
+  - true
+- - node
+  - - hydro_lower
+  - hydro
+  - true
+- - node
+  - - hydro_upper
+  - hydro
+  - true
+- - node
+  - - north
+  - north
+  - true
+- - node
+  - - south
+  - south
+  - true
+- - node
+  - - uranium
+  - init
+  - true
+- - node
+  - - west
+  - west
+  - true
+- - period
+  - - y2025
+  - init
+  - true
+- - solve_pattern
+  - - test_24h
+  - init
+  - true
+- - system
+  - - test
+  - init
+  - true
+- - temporality
+  - - hourly
+  - init
+  - true
+- - unit
+  - - CH4_synthesis
+  - CH4_synthesis
+  - true
+- - unit
+  - - battery_inverter_south
+  - battery
+  - true
+- - unit
+  - - electrolyser_north
+  - electrolyser
+  - true
+- - unit
+  - - fuel_cell_north
+  - fuel_cell
+  - true
+- - unit
+  - - gas_CC_east
+  - gas_CC
+  - true
+- - unit
+  - - gas_CHP_north
+  - gas_CHP
+  - true
+- - unit
+  - - gas_OC_west
+  - gas_OC
+  - true
+- - unit
+  - - heatpump_north_DH
+  - DH
+  - true
+- - unit
+  - - heatpump_north_building
+  - building
+  - true
+- - unit
+  - - hydro1_north
+  - hydro
+  - true
+- - unit
+  - - hydro2_north
+  - hydro
+  - true
+- - unit
+  - - hydro_spill_1_to_2
+  - hydro
+  - true
+- - unit
+  - - nuclear_west
+  - nuclear
+  - true
+- - unit
+  - - pv_south
+  - pv
+  - true
+- - unit
+  - - wind_north
+  - wind
+  - true
+entity_classes:
+- - constraint
+  - []
+  - null
+  - 281246450775340
+  - false
+- - link
+  - []
+  - null
+  - 280462687073079
+  - false
+- - node
+  - []
+  - null
+  - 280683380142637
+  - false
+- - period
+  - []
+  - null
+  - 281105609584759
+  - false
+- - reserve
+  - []
+  - null
+  - 281291854967042
+  - false
+- - set
+  - []
+  - null
+  - 280569496596882
+  - false
+- - solve_pattern
+  - []
+  - null
+  - 281281703244097
+  - false
+- - system
+  - []
+  - null
+  - 280741963429022
+  - false
+- - temporality
+  - []
+  - null
+  - 280961862398546
+  - false
+- - test
+  - []
+  - null
+  - 281382822474858
+  - false
+- - tool
+  - []
+  - null
+  - 280378333982893
+  - false
+- - unit
+  - []
+  - null
+  - 280740537364493
+  - false
+- - node__node
+  - - node
+    - node
+  - null
+  - null
+  - true
+- - node__reserve
+  - - node
+    - reserve
+  - null
+  - null
+  - true
+- - node__to_unit
+  - - node
+    - unit
+  - ''
+  - 280566643749643
+  - true
+- - set__link
+  - - set
+    - link
+  - null
+  - null
+  - true
+- - set__node
+  - - set
+    - node
+  - null
+  - null
+  - true
+- - set__reserve
+  - - set
+    - reserve
+  - null
+  - null
+  - true
+- - set__unit
+  - - set
+    - unit
+  - null
+  - null
+  - true
+- - tool__set
+  - - tool
+    - set
+  - null
+  - null
+  - true
+- - unit__to_node
+  - - unit
+    - node
+  - null
+  - 280566643749643
+  - true
+- - link__node__reserve
+  - - link
+    - node
+    - reserve
+  - null
+  - null
+  - true
+- - node__link__node
+  - - node
+    - link
+    - node
+  - null
+  - 280462687072545
+  - true
+- - set__node__unit
+  - - set
+    - node
+    - unit
+  - null
+  - null
+  - true
+- - unit__node__reserve
+  - - unit
+    - node
+    - reserve
+  - null
+  - null
+  - true
+parameter_definitions:
+- - constraint
+  - constant
+  - null
+  - null
+  - Right hand side of the constraint.
+- - constraint
+  - sense
+  - null
+  - sense
+  - Is the sense of the constraint equal to, greater than or less than.
+- - link
+  - availability
+  - null
+  - null
+  - '[e.g. 0.9 means 90%] Fraction of capacity available for transfer link flows.
+    Time series (or constant or array of periods).'
+- - link
+  - capacity
+  - null
+  - null
+  - '[MW] Capacity in either direction for one transfer link. Constant.'
+- - link
+  - constraint_link_count_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the number of the links. Map of constraints
+    and respective coefficients.'
+- - link
+  - cumulative_lower_limit
+  - null
+  - null
+  - '[Number] of transfer links that must at least exist (considers existing, invested
+    and retired units). Constant or array of periods.'
+- - link
+  - cumulative_upper_limit
+  - null
+  - null
+  - '[Number] of transfer links that can exist (considers existing, invested and retired
+    units). Constant or array of periods.'
+- - link
+  - efficiency
+  - null
+  - null
+  - '[p.u.] Efficiency of transfer in either direction. Not used by all link_tranfer_methods.
+    Constant.'
+- - link
+  - existing_links
+  - null
+  - null
+  - '[Number] of existing transfer links.'
+- - link
+  - fixed_cost
+  - null
+  - null
+  - '[CUR/MW/year] Fixed annual cost for the transfer capacity. Constant or array
+    of periods.'
+- - link
+  - interest_rate
+  - null
+  - null
+  - "[e.g. 0.05] is 5 %. Interest rate for transfer link investments. Constant or\
+    \ array of periods.\r\n"
+- - link
+  - investment_cost
+  - null
+  - null
+  - '[CUR/MWh] Investment cost for the transfer capacity. Constant or array of periods.'
+- - link
+  - investment_fix
+  - null
+  - null
+  - '[Number] of links that must be invested in. Array of periods.'
+- - link
+  - investment_lower_limit
+  - null
+  - null
+  - '[Number] of links that must at least be invested in. Array of periods.'
+- - link
+  - investment_method
+  - null
+  - link_invest_method
+  - How investments are treated.
+- - link
+  - investment_upper_limit
+  - null
+  - null
+  - '[Number] of links that can be invested in. Array of periods.'
+- - link
+  - lifetime
+  - null
+  - null
+  - "[years] Lifetime of the unit for annuity calculation and for retirement decision\
+    \ when using retire_at_the_end_of_lifetime method. Constant or array of periods.\r\
+    \n"
+- - link
+  - operational_cost
+  - null
+  - null
+  - '[CUR/MWh] Variable cost for the flow. Applies in both directions when transfer_method
+    includes costs. Constant or array of periods.'
+- - link
+  - retirement_fix
+  - null
+  - null
+  - '[Number] of links that must be retired. Array of periods.'
+- - link
+  - retirement_method
+  - null
+  - link_retirement_method
+  - How retirements are treated.
+- - link
+  - salvage_value
+  - null
+  - null
+  - '[CUR/MW] Salvage value of a transfer link at the end of lifetime (constant) or
+    after reaching a particular age (map of periods with age and salvage value).'
+- - link
+  - transfer_method
+  - null
+  - link_transfer_method
+  - How the link transfers.
+- - link
+  - x
+  - null
+  - null
+  - null
+- - link
+  - y
+  - null
+  - null
+  - null
+- - link__node__reserve
+  - contingency_causing
+  - null
+  - boolean
+  - Whether the flow causes a need for a contingency reserve.
+- - link__node__reserve
+  - max_reserve_provision
+  - null
+  - null
+  - '[p.u.] Maximum share of the flow that can be allocated to reserve provision.'
+- - link__node__reserve
+  - reservation_cost
+  - null
+  - null
+  - '[CUR/MWh/h] Cost of providing the reservation.'
+- - link__node__reserve
+  - reserve_provision_coefficient
+  - null
+  - null
+  - '[e.g. 0.8] means that 80% of the provided reserve is contributing to the reserve
+    requirement.'
+- - link__node__reserve
+  - reserve_requirement_factor
+  - null
+  - null
+  - '[p.u.] The factor is multiplied with the flow to increase the reserve requirement.'
+- - node
+  - commodity_price
+  - null
+  - null
+  - '[CUR/MWh or other unit] Price of the commodity.'
+- - node
+  - constraint_storage_count_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the number of the storage units. Map
+    of constraints and respective coefficients.'
+- - node
+  - constraint_storage_state_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the state of the storage. Map of constraints
+    and respective coefficients.'
+- - node
+  - existing_storages
+  - null
+  - null
+  - '[Number] of storages at the start of the model.'
+- - node
+  - flow_annual
+  - null
+  - null
+  - '[MWh] Annual flow to scale flow_profile depending on the flow_scaling_method.
+    Constant or array of periods.'
+- - node
+  - flow_profile
+  - null
+  - null
+  - '[MWh] Inflow is positive and outflow (demand) is negative. Time series, constant
+    or array of periods.'
+- - node
+  - flow_scaling_method
+  - null
+  - flow_scaling_method
+  - How to scale/use the flow_profile.
+- - node
+  - node_type
+  - null
+  - node_type
+  - How the node should behave.
+- - node
+  - penalty_downward
+  - null
+  - null
+  - '[CUR/MWh] Penalty for removing energy from the node. Constant or array of periods.'
+- - node
+  - penalty_upward
+  - null
+  - null
+  - '[CUR/MWh] Penalty for adding energy to the node. Constant or array of periods.'
+- - node
+  - storage_capacity
+  - null
+  - null
+  - '[MWh] Capacity of one storage unit. Constant or array of periods.'
+- - node
+  - storage_cumulative_lower_limit
+  - null
+  - null
+  - '[Number] of storage units that must at least exist (considers existing, invested
+    and retired units). Constant or array of periods.'
+- - node
+  - storage_cumulative_upper_limit
+  - null
+  - null
+  - '[Number] of storage units that can exist (considers existing, invested and retired
+    units). Constant or array of periods.'
+- - node
+  - storage_fixed_cost
+  - null
+  - null
+  - '[CUR/MWh/year] Fixed annual cost for the storage capacity. Constant or array
+    of periods.'
+- - node
+  - storage_interest_rate
+  - null
+  - null
+  - '[e.g. 0.05] is 5 %. Interest rate for storage investments. Constant or array
+    of periods.'
+- - node
+  - storage_investment_cost
+  - null
+  - null
+  - '[CUR/MWh] Investment cost for the storage capacity. Constant or array of periods.'
+- - node
+  - storage_investment_fix
+  - null
+  - null
+  - '[Number] of storage units that must be invested in. Array of periods.'
+- - node
+  - storage_investment_lower_limit
+  - null
+  - null
+  - '[Number] of storage units that must at least be invested in. Array of periods.'
+- - node
+  - storage_investment_method
+  - null
+  - storage_investment_method
+  - How investments are treated.
+- - node
+  - storage_investment_upper_limit
+  - null
+  - null
+  - '[Number] of storage units that can be invested in. Array of periods.'
+- - node
+  - storage_lifetime
+  - null
+  - null
+  - '[years] Lifetime of the storage plant for annuity calculation and for retirement
+    decision depending on the storage_retirement_method. Constant or array of periods.'
+- - node
+  - storage_limit_method
+  - null
+  - profile_method
+  - What limits are applied to the storage state.
+- - node
+  - storage_retirement_fix
+  - null
+  - null
+  - '[Number] of storage units that must be retired. Array of periods.'
+- - node
+  - storage_retirement_method
+  - null
+  - storage_retirement_method
+  - How retirements are treated.
+- - node
+  - storage_salvage_value
+  - null
+  - null
+  - '[CUR/MWh] Salvage value of a storage at the end of lifetime (constant) or after
+    reaching a particular age (map of periods with age and salvage value).'
+- - node
+  - storage_state_fix
+  - null
+  - null
+  - '[p.u.] Fix the storage state. Time series, constant or array of periods.'
+- - node
+  - storage_state_lower_limit
+  - null
+  - null
+  - '[p.u.] Lower limit for the state of the storage. Time series, constant or array
+    of periods.'
+- - node
+  - storage_state_upper_limit
+  - null
+  - null
+  - '[p.u.] Upper limit for the state of the storage. Time series, constant or array
+    of periods.'
+- - node
+  - x
+  - null
+  - null
+  - null
+- - node
+  - y
+  - null
+  - null
+  - null
+- - node__link__node
+  - capacity
+  - null
+  - null
+  - '[MW] Capacity in left-to-right direction for one transfer link. Replaces link
+    capacity in that direction. Constant.'
+- - node__link__node
+  - constraint_flow_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the left-to-right flow in the link.
+    Should not be applied in the no_losses_no_cost transfer_method. Map of constraints
+    and respective coefficients.'
+- - node__link__node
+  - efficiency
+  - null
+  - null
+  - '[p.u.] Efficiency of transfer in left-to-right direction. Not used by all link_tranfer_methods.
+    Constant.'
+- - node__link__node
+  - operational_cost
+  - null
+  - null
+  - '[CUR/MWh] Variable cost for the flow in left-to-right direction. Applies when
+    transfer_method includes costs. Constant or array of periods.'
+- - node__link__node
+  - x
+  - null
+  - null
+  - null
+- - node__link__node
+  - y
+  - null
+  - null
+  - null
+- - node__node
+  - diffusion_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier for diffusing energy between two nodes based on the difference
+    in the node storage state. Constant or time series.'
+- - node__node
+  - junction_type
+  - null
+  - junction_type
+  - What is the interaction type between the two nodes.
+- - node__reserve
+  - reserve_requirement
+  - null
+  - null
+  - '[MW] A reserve requirement for the node. Must be provided into this node.'
+- - node__to_unit
+  - capacity
+  - null
+  - null
+  - '[MW] Capacity for one unit (is therefore multiplied by number of existing plus
+    invested units). Constant.'
+- - node__to_unit
+  - constraint_flow_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the flow. Map of constraints and respective
+    coefficients.'
+- - node__to_unit
+  - conversion_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between the flow and the conversion equation of the unit. Not
+    used by coefficients_only conversion_method. Constant.'
+- - node__to_unit
+  - fixed_cost
+  - null
+  - null
+  - '[CUR/MW/year] Fixed annual cost for the flow capacity. Constant or array of periods.'
+- - node__to_unit
+  - investment_cost
+  - null
+  - null
+  - '[CUR/MW] Investment cost for the flow capacity. Constant or array of periods.'
+- - node__to_unit
+  - other_operational_cost
+  - null
+  - null
+  - '[CUR/MWh] Variable cost for the flow. Constant or array of periods.'
+- - node__to_unit
+  - profile_fix
+  - null
+  - null
+  - '[p.u.] Fix the flow. Time series, constant or array of periods.'
+- - node__to_unit
+  - profile_limit_lower
+  - null
+  - null
+  - '[p.u.] Set a maximum flow limit. Time series, constant or array of periods.'
+- - node__to_unit
+  - profile_limit_upper
+  - null
+  - null
+  - '[p.u.] Set a minimum flow limit. Time series, constant or array of periods.'
+- - node__to_unit
+  - profile_method
+  - null
+  - profile_method
+  - How to limit the flow based on profiles.
+- - node__to_unit
+  - ramp_cost
+  - null
+  - null
+  - '[CUR/MW] Cost of ramping up. Constant or array of periods.'
+- - node__to_unit
+  - ramp_limit_down
+  - null
+  - null
+  - '[p.u./minute] Maximum ramp down speed. Constant.'
+- - node__to_unit
+  - ramp_limit_up
+  - null
+  - null
+  - '[p.u./minute] Maximum ramp up speed. Constant.'
+- - node__to_unit
+  - ramp_method
+  - null
+  - ramp_method
+  - How ramps are constrained and/or valued.
+- - node__to_unit
+  - salvage_value
+  - null
+  - null
+  - '[CUR/MWh] Salvage value at the end of lifetime (constant) or after reaching a
+    particular age (map of periods with age and salvage value).'
+- - node__to_unit
+  - x
+  - null
+  - null
+  - null
+- - node__to_unit
+  - y
+  - null
+  - null
+  - null
+- - period
+  - duration
+  - null
+  - null
+  - Duration of the period
+- - period
+  - start_time
+  - null
+  - null
+  - Datetime for the start of the period
+- - reserve
+  - activation_time
+  - null
+  - null
+  - '[duration] How fast the reserve must be provided.'
+- - reserve
+  - duration
+  - null
+  - null
+  - '[duration] How long the reserve provision needs to last.'
+- - reserve
+  - reserve_type
+  - null
+  - reserve_type
+  - What kind of reserve is in question (symmetric means that the reserve must be
+    provided in both directions, contingency means that the reserve requirement is
+    based on the contingency_causing flows).
+- - set
+  - network_type
+  - null
+  - network_type
+  - What is the network type for the nodes connected to the set.
+- - set
+  - temporality
+  - null
+  - null
+  - Which temporality (time resolution) the set will propagate to the set members
+    (node, node__unit, link).
+- - set__reserve
+  - reserve_requirement
+  - null
+  - null
+  - '[MW] A shared reserve requirement for the set of nodes. Reserve can be provided
+    into any of the nodes.'
+- - solve_pattern
+  - duration
+  - null
+  - null
+  - Duration of the model. In case no duration has been provided, the model will extend
+    to the end of the last period.
+- - solve_pattern
+  - includes_solve_pattern
+  - null
+  - null
+  - Points to an inner solve_pattern. Used to create nested model structures.
+- - solve_pattern
+  - period
+  - null
+  - null
+  - A single period or an array of periods or a map of period arrays (for rolling
+    and possibly myopic invesments).
+- - solve_pattern
+  - rolling_horizon
+  - null
+  - null
+  - Duration of the model horizon for rolling window models.
+- - solve_pattern
+  - rolling_jump
+  - null
+  - null
+  - Duration of the model jump between two solves in rolling window models.
+- - solve_pattern
+  - solve_mode
+  - null
+  - solve_mode
+  - Rolling or single solve model.
+- - solve_pattern
+  - start_time
+  - null
+  - null
+  - Start time for the model. If no start time has been provided, the model will start
+    from the beginning of the first period.
+- - system
+  - discount_rate
+  - null
+  - null
+  - '[e.g. 0.05] is 5%. Discount rate for the value of future compared to today. Constant
+    or array of periods.'
+- - system
+  - timeline
+  - null
+  - null
+  - Time steps that can be present in a model instance. Tries to ensure that all time
+    series data is from matching time steps.
+- - temporality
+  - resolution
+  - null
+  - null
+  - Time resolution for model or model part. In minutes.
+- - test
+  - downward_slack
+  - null
+  - null
+  - '[MWh] Used for correct answer when downward slack variable is being tested.'
+- - test
+  - flow
+  - null
+  - null
+  - '[MWh] Used for correct answer when flow variable is being tested.'
+- - test
+  - investment
+  - null
+  - null
+  - '[MW] Used for correct answer when investment variable is being tested.'
+- - test
+  - online
+  - null
+  - null
+  - '[MW] Used for correct answer when online variable is being tested.'
+- - test
+  - reserve
+  - null
+  - null
+  - '[MW] Used for correct answer when reserve variable is being tested.'
+- - test
+  - retirement
+  - null
+  - null
+  - '[MW] Used for correct answer when retirement variable is being tested.'
+- - test
+  - state
+  - null
+  - null
+  - '[MWh] Used for correct answer when storage state variable is being tested.'
+- - test
+  - target
+  - null
+  - null
+  - '[entity_class__entity] to be tested.'
+- - test
+  - upward_slack
+  - null
+  - null
+  - '[MWh] Used for correct answer when upward slack variable is being tested.'
+- - unit
+  - availability
+  - null
+  - null
+  - '[p.u.] Fraction of the unit available for operation. Time series (or constant
+    or array of periods).'
+- - unit
+  - constraint_online_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the online status of the unit. Map
+    of constraints and respective coefficients.'
+- - unit
+  - constraint_unit_count_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the number of the units. Map of constraints
+    and respective coefficients.'
+- - unit
+  - conversion_method
+  - null
+  - unit_conversion_method
+  - What method to use when converting inputs to outputs.
+- - unit
+  - cumulative_lower_limit
+  - null
+  - null
+  - '[Number] of units that must at least exist (considers existing, invested and
+    retired units). Constant or array of periods.'
+- - unit
+  - cumulative_upper_limit
+  - null
+  - null
+  - '[Number] of units that can exist (considers existing, invested and retired units).
+    Constant or array of periods.'
+- - unit
+  - efficiency
+  - null
+  - null
+  - '[p.u.] Multiplier for turning inputs to outputs. Usage depends on the conversion_method.'
+- - unit
+  - existing_units
+  - null
+  - null
+  - '[Number] of existing units.'
+- - unit
+  - interest_rate
+  - null
+  - null
+  - '[e.g. 0.05] is 5 %. Interest rate for investing in the unit. Constant or array
+    of periods.'
+- - unit
+  - investment_fix
+  - null
+  - null
+  - '[Number] of units that must be invested in. Array of periods.'
+- - unit
+  - investment_lower_limit
+  - null
+  - null
+  - '[Number] of units that must at least be invested in. Array of periods.'
+- - unit
+  - investment_method
+  - null
+  - unit_invest_method
+  - How investments are treated.
+- - unit
+  - investment_upper_limit
+  - null
+  - null
+  - '[Number] of units that can be invested in. Array of periods.'
+- - unit
+  - lifetime
+  - null
+  - null
+  - '[years] Lifetime of the unit for annuity calculation and for retirement decision
+    depending on the unit_retirement_method. Constant or array of periods.'
+- - unit
+  - retirement_fix
+  - null
+  - null
+  - '[Number] of units that must be retired. Array of periods.'
+- - unit
+  - retirement_method
+  - null
+  - unit_retirement_method
+  - How retirements are treated.
+- - unit
+  - shutdown_cost
+  - null
+  - null
+  - '[CUR/p.u.] Cost of one full shutdown. Constant or array of periods.'
+- - unit
+  - startup_cost
+  - null
+  - null
+  - '[CUR/p.u.] Cost of one full startup. Constant or array of periods.'
+- - unit
+  - startup_method
+  - null
+  - unit_startup_method
+  - What method is used for unit startups.
+- - unit
+  - x
+  - null
+  - null
+  - null
+- - unit
+  - y
+  - null
+  - null
+  - null
+- - unit__node__reserve
+  - contingency_causing
+  - null
+  - boolean
+  - Whether the flow causes a need for a contingency reserve.
+- - unit__node__reserve
+  - max_reserve_provision
+  - null
+  - null
+  - '[p.u.] Maximum share of the flow that can be allocated to reserve provision.'
+- - unit__node__reserve
+  - reservation_cost
+  - null
+  - null
+  - '[CUR/MWh/h] Cost of providing the reservation.'
+- - unit__node__reserve
+  - reserve_provision_coefficient
+  - null
+  - null
+  - '[e.g. 0.8] means that 80% of the provided reserve is contributing to the reserve
+    requirement.'
+- - unit__node__reserve
+  - reserve_requirement_factor
+  - null
+  - null
+  - '[p.u.] The factor is multiplied with the flow to increase the reserve requirement.'
+- - unit__to_node
+  - capacity
+  - null
+  - null
+  - '[MW] Capacity for one unit (is therefore multiplied by number of existing plus
+    invested units). Constant.'
+- - unit__to_node
+  - constraint_flow_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between constraints and the flow. Map of constraints and respective
+    coefficients.'
+- - unit__to_node
+  - conversion_coefficient
+  - null
+  - null
+  - '[p.u.] Multiplier between the flow and the conversion equation of the unit. Not
+    used by coefficients_only conversion_method. Constant.'
+- - unit__to_node
+  - fixed_cost
+  - null
+  - null
+  - '[CUR/MW/year] Fixed annual cost for the flow capacity. Constant or array of periods.'
+- - unit__to_node
+  - investment_cost
+  - null
+  - null
+  - '[CUR/MW] Investment cost for the flow capacity. Constant or array of periods.'
+- - unit__to_node
+  - other_operational_cost
+  - null
+  - null
+  - '[CUR/MWh] Variable cost for the flow. Constant or array of periods.'
+- - unit__to_node
+  - profile_fix
+  - null
+  - null
+  - '[p.u.] Fix the flow. Time series, constant or array of periods.'
+- - unit__to_node
+  - profile_limit_lower
+  - null
+  - null
+  - '[p.u.] Set a maximum flow limit. Time series, constant or array of periods.'
+- - unit__to_node
+  - profile_limit_upper
+  - null
+  - null
+  - '[p.u.] Set a minimum flow limit. Time series, constant or array of periods.'
+- - unit__to_node
+  - profile_method
+  - null
+  - profile_method
+  - How to limit the flow based on profiles.
+- - unit__to_node
+  - ramp_cost
+  - null
+  - null
+  - '[CUR/MW] Cost of ramping up. Constant or array of periods.'
+- - unit__to_node
+  - ramp_limit_down
+  - null
+  - null
+  - '[p.u./minute] Maximum ramp down speed. Constant.'
+- - unit__to_node
+  - ramp_limit_up
+  - null
+  - null
+  - '[p.u./minute] Maximum ramp up speed. Constant.'
+- - unit__to_node
+  - ramp_method
+  - null
+  - ramp_method
+  - How ramps are constrained and/or valued.
+- - unit__to_node
+  - salvage_value
+  - null
+  - null
+  - '[CUR/MWh] Salvage value at the end of lifetime (constant) or after reaching a
+    particular age (map of periods with age and salvage value).'
+- - unit__to_node
+  - x
+  - null
+  - null
+  - null
+- - unit__to_node
+  - y
+  - null
+  - null
+  - null
+parameter_value_lists:
+- - boolean
+  - 'true'
+- - boolean
+  - 'false'
+- - flow_scaling_method
+  - no_inflow
+- - flow_scaling_method
+  - use_profile_directly
+- - flow_scaling_method
+  - scale_to_annual
+- - junction_type
+  - diffusion
+- - link_invest_method
+  - not_allowed
+- - link_invest_method
+  - limit_total_capacity
+- - link_invest_method
+  - no_limits
+- - link_retirement_method
+  - not_retired
+- - link_retirement_method
+  - economic_retirement
+- - link_retirement_method
+  - retire_at_the_end_of_lifetime
+- - link_retirement_method
+  - retire_as_scheduled
+- - link_retirement_method
+  - retire_as_scheduled_or_economic
+- - link_transfer_method
+  - no_losses_no_cost
+- - link_transfer_method
+  - regular_linear
+- - link_transfer_method
+  - exact_integer
+- - link_transfer_method
+  - only_cost
+- - link_transfer_method
+  - one_way
+- - link_transfer_method
+  - only_losses
+- - network_type
+  - none
+- - network_type
+  - transfer
+- - network_type
+  - DC_load_flow
+- - node_type
+  - balance
+- - node_type
+  - commodity
+- - node_type
+  - storage
+- - node_type
+  - node_breaker
+- - node_type
+  - bus_branch
+- - profile_method
+  - upper_limit
+- - profile_method
+  - lower_limit
+- - profile_method
+  - upper_and_lower_limit
+- - profile_method
+  - fixed
+- - profile_method
+  - no_profile
+- - ramp_method
+  - no_constraint
+- - ramp_method
+  - ramp_limit
+- - ramp_method
+  - ramp_cost
+- - ramp_method
+  - ramp_limit_and_cost
+- - reserve_type
+  - upward
+- - reserve_type
+  - downward
+- - reserve_type
+  - symmetric
+- - reserve_type
+  - contingency
+- - sense
+  - equal
+- - sense
+  - greater_than
+- - sense
+  - less_than
+- - solve_mode
+  - single_solve
+- - solve_mode
+  - rolling_window
+- - storage_investment_method
+  - not_allowed
+- - storage_investment_method
+  - limit_total_capacity
+- - storage_investment_method
+  - no_limits
+- - storage_retirement_method
+  - not_retired
+- - storage_retirement_method
+  - economic_retirement
+- - storage_retirement_method
+  - retire_at_end_of_lifetime
+- - storage_retirement_method
+  - retire_as_scheduled
+- - storage_retirement_method
+  - retire_as_scheduled_or_economic
+- - unit_conversion_method
+  - constant_efficiency
+- - unit_conversion_method
+  - partial_load_efficiency
+- - unit_conversion_method
+  - piecewise_linear
+- - unit_conversion_method
+  - piecewise_SOS2
+- - unit_conversion_method
+  - two_way_linear
+- - unit_conversion_method
+  - coefficients_only
+- - unit_invest_method
+  - not_allowed
+- - unit_invest_method
+  - limit_total_capacity
+- - unit_invest_method
+  - no_limits
+- - unit_retirement_method
+  - not_retired
+- - unit_retirement_method
+  - economic_retirement
+- - unit_retirement_method
+  - retire_at_the_end_of_lifetime
+- - unit_retirement_method
+  - retire_as_scheduled
+- - unit_retirement_method
+  - retire_as_scheduled_or_economic
+- - unit_startup_method
+  - no_startup
+- - unit_startup_method
+  - linear
+- - unit_startup_method
+  - integer
+- - unit_startup_method
+  - trajectory

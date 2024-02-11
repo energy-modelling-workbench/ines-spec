@@ -898,6 +898,13 @@
         ],
         [
             "link",
+            "existing_links",
+            null,
+            null,
+            "[Number] of existing transfer links."
+        ],
+        [
+            "link",
             "fixed_cost",
             null,
             null,
