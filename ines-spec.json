@@ -271,17 +271,17 @@
         [
             "node",
             [
-                "CH4"
+                "CH4_east"
             ],
-            "CH4_node",
+            "CH4_network",
             true
         ],
         [
             "node",
             [
-                "CH4_east"
+                "CH4_market"
             ],
-            "CH4_network",
+            "CH4_node",
             true
         ],
         [
@@ -1353,6 +1353,13 @@
         ],
         [
             "node__to_unit",
+            "nox_emission_rate",
+            null,
+            null,
+            "[kg of NOx emissions/MWh] NOx emission rate per MWh of flow"
+        ],
+        [
+            "node__to_unit",
             "other_operational_cost",
             null,
             null,
@@ -1840,6 +1847,13 @@
             null,
             null,
             "[CUR/MW] Investment cost for the flow capacity. Constant or array of periods."
+        ],
+        [
+            "unit__to_node",
+            "nox_emission_rate",
+            null,
+            null,
+            "[kg of NOx emissions/MWh] NOx emission rate per MWh of flow"
         ],
         [
             "unit__to_node",

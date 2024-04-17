@@ -24,12 +24,12 @@ entity_alternatives:
   - west_south
   - true
 - - node
-  - - CH4
-  - CH4_node
-  - true
-- - node
   - - CH4_east
   - CH4_network
+  - true
+- - node
+  - - CH4_market
+  - CH4_node
   - true
 - - node
   - - CH4_north
@@ -706,6 +706,11 @@ parameter_definitions:
   - null
   - '[CUR/MW] Investment cost for the flow capacity. Constant or array of periods.'
 - - node__to_unit
+  - nox_emission_rate
+  - null
+  - null
+  - '[kg of NOx emissions/MWh] NOx emission rate per MWh of flow'
+- - node__to_unit
   - other_operational_cost
   - null
   - null
@@ -1076,6 +1081,11 @@ parameter_definitions:
   - null
   - null
   - '[CUR/MW] Investment cost for the flow capacity. Constant or array of periods.'
+- - unit__to_node
+  - nox_emission_rate
+  - null
+  - null
+  - '[kg of NOx emissions/MWh] NOx emission rate per MWh of flow'
 - - unit__to_node
   - other_operational_cost
   - null
