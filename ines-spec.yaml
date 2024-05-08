@@ -465,6 +465,11 @@ parameter_definitions:
   - null
   - '[p.u.] The factor is multiplied with the flow to increase the reserve requirement.'
 - - node
+  - co2_content
+  - null
+  - null
+  - '[ton of CO2/MWh] Implicit CO2 content released when fuel used.'
+- - node
   - commodity_price
   - null
   - null

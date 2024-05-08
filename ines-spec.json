@@ -1045,6 +1045,13 @@
         ],
         [
             "node",
+            "co2_content",
+            null,
+            null,
+            "[ton of CO2/MWh] Implicit CO2 content released when fuel used."
+        ],
+        [
+            "node",
             "commodity_price",
             null,
             null,
