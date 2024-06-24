@@ -278,6 +278,18 @@ entity_classes:
   - null
   - 280566643749643
   - true
+- - unit_flow
+  - - unit
+    - node
+  - null
+  - null
+  - true
+- - unit_flow__unit_flow
+  - - unit_flow
+    - unit_flow
+  - null
+  - 280566643749617
+  - true
 - - link__node__reserve
   - - link
     - node
@@ -501,8 +513,8 @@ parameter_definitions:
   - flow_profile
   - null
   - null
-  - '[MWh] Inflow is positive and outflow (demand) is negative. Time series, constant
-    or array of periods.'
+  - '[MWh or ratio] Inflow is positive and outflow (demand) is negative. Time series,
+    constant or array of periods.'
 - - node
   - flow_scaling_method
   - null
@@ -764,7 +776,7 @@ parameter_definitions:
   - salvage_value
   - null
   - null
-  - '[CUR/MWh] Salvage value at the end of lifetime (constant) or after reaching a
+  - '[CUR/MW] Salvage value at the end of lifetime (constant) or after reaching a
     particular age (map of periods with age and salvage value).'
 - - node__to_unit
   - x
@@ -1140,7 +1152,7 @@ parameter_definitions:
   - salvage_value
   - null
   - null
-  - '[CUR/MWh] Salvage value at the end of lifetime (constant) or after reaching a
+  - '[CUR/MW] Salvage value at the end of lifetime (constant) or after reaching a
     particular age (map of periods with age and salvage value).'
 - - unit__to_node
   - x
@@ -1152,6 +1164,36 @@ parameter_definitions:
   - null
   - null
   - null
+- - unit_flow__unit_flow
+  - equality_constant
+  - null
+  - null
+  - '[MW] Constant C in [flow_1 = A x flow_2 + C] for equality constraints'
+- - unit_flow__unit_flow
+  - equality_ratio
+  - null
+  - null
+  - '[ratio] Ratio A in [flow_1 = A x flow_2 + C] for equality constraints'
+- - unit_flow__unit_flow
+  - greater_than_constant
+  - null
+  - null
+  - '[MW] Constant C in [flow_1 = A x flow_2 + C] for greater than constraints'
+- - unit_flow__unit_flow
+  - greater_than_ratio
+  - null
+  - null
+  - '[ratio] Ratio A in [flow_1 = A x flow_2 + C] for greater than constraints'
+- - unit_flow__unit_flow
+  - less_than_constant
+  - null
+  - null
+  - '[MW] Constant C in [flow_1 = A x flow_2 + C] for less than constraints'
+- - unit_flow__unit_flow
+  - less_than_ratio
+  - null
+  - null
+  - '[ratio] Ratio A in [flow_1 = A x flow_2 + C] for less than constraints'
 parameter_value_lists:
 - - boolean
   - 'true'
