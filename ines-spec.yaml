@@ -266,6 +266,12 @@ entity_classes:
   - null
   - null
   - true
+- - set__unit_flow
+  - - set
+    - unit_flow
+  - null
+  - null
+  - true
 - - tool__set
   - - tool
     - set
@@ -303,13 +309,6 @@ entity_classes:
     - node
   - null
   - 280462687072545
-  - true
-- - set__node__unit
-  - - set
-    - node
-    - unit
-  - null
-  - null
   - true
 - - unit__node__reserve
   - - unit
@@ -406,6 +405,11 @@ parameter_definitions:
   - null
   - null
   - '[Number] of links that can be invested in. Array of periods.'
+- - link
+  - is_non_synchronous
+  - 'false'
+  - boolean
+  - Chooses whether the link connects the two nodes synchronously or not.
 - - link
   - lifetime
   - null
@@ -718,10 +722,20 @@ parameter_definitions:
   - null
   - '[CUR/MW/year] Fixed annual cost for the flow capacity. Constant or array of periods.'
 - - node__to_unit
+  - inertia_constant
+  - null
+  - null
+  - '[MWs/MW] Inertia constant for a synchronously connected unit to this node. Constant.'
+- - node__to_unit
   - investment_cost
   - null
   - null
   - '[CUR/MW] Investment cost for the flow capacity. Constant or array of periods.'
+- - node__to_unit
+  - is_non_synchronous
+  - 'false'
+  - boolean
+  - Chooses whether the unit is synchronously connected to this node.
 - - node__to_unit
   - nox_emission_rate
   - null
@@ -798,6 +812,12 @@ parameter_definitions:
   - null
   - null
   - Datetime for the start of the period
+- - period
+  - years_represented
+  - null
+  - null
+  - How many years the period represents before the next period in the solve. Used
+    for discounting. Can be below one (multiple periods in one year).
 - - reserve
   - activation_time
   - null
@@ -816,10 +836,76 @@ parameter_definitions:
     provided in both directions, contingency means that the reserve requirement is
     based on the contingency_causing flows).
 - - set
+  - inertia_limit
+  - null
+  - null
+  - '[MWs] Minimum for synchronous inertia in the group of nodes. Constant, period,
+    time, or period__time.'
+- - set
+  - invest_max_period
+  - null
+  - null
+  - '[MW or MWh] Maximum investment per period to the aggregated capacity of set member
+    flows (unit__to_node, node__to_unit, link) and storage capacity. Map of periods.'
+- - set
+  - invest_max_total
+  - null
+  - null
+  - '[MW or MWh] Maximum investment to the aggregated capacity of set member flows
+    (unit__to_node, node__to_unit, link) and storage capacity. Applies in all periods.
+    Constant.'
+- - set
+  - invest_min_period
+  - null
+  - null
+  - '[MW or MWh] Minimum investment per period to the aggregated capacity of set member
+    flows (unit__to_node, node__to_unit, link) and storage capacity. Map of periods.'
+- - set
+  - invest_min_total
+  - null
+  - null
+  - '[MW or MWh] Minimum investment to the aggregated capacity of set member flows
+    (unit__to_node, node__to_unit, link) and storage capacity. Applies in all periods.
+    Constant.'
+- - set
+  - max_cumulative_flow
+  - null
+  - null
+  - '[MW] Maximum aggregated average flow for the set members (unit__to_node, node__to_unit,
+    link). The average value is multiplied by the model duration to get the cumulative
+    limit (e.g. by 8760 if a single year is modelled). Applied for each period. Constant
+    or map of periods.'
+- - set
+  - max_instant_flow
+  - null
+  - null
+  - '[MW] Maximum instantenous flow for the aggregated flow of all set members. Constant
+    or period.'
+- - set
+  - min_cumulative_flow
+  - null
+  - null
+  - '[MW] Maximum aggregated average flow for the set members (unit__to_node, node__to_unit,
+    link). The average value is multiplied by the model duration to get the cumulative
+    limit (e.g. by 8760 if a single year is modelled). Applied for each period. Constant
+    or map of periods.'
+- - set
+  - min_instant_flow
+  - null
+  - null
+  - '[MW] Minimum instantenous flow for the aggregated flow of all set members. Constant
+    or period.'
+- - set
   - network_type
   - null
   - network_type
   - What is the network type for the nodes connected to the set.
+- - set
+  - non_synchronous_limit
+  - null
+  - null
+  - '[share, e.g. 0.8 means 80%] The maximum share of non-synchronous generation in
+    the set of nodes. Constant or period.'
 - - set
   - temporality
   - null
@@ -1094,10 +1180,20 @@ parameter_definitions:
   - null
   - '[CUR/MW/year] Fixed annual cost for the flow capacity. Constant or array of periods.'
 - - unit__to_node
+  - inertia_constant
+  - null
+  - null
+  - '[MWs/MW] Inertia constant for a synchronously connected unit to this node. Constant.'
+- - unit__to_node
   - investment_cost
   - null
   - null
   - '[CUR/MW] Investment cost for the flow capacity. Constant or array of periods.'
+- - unit__to_node
+  - is_non_synchronous
+  - 'false'
+  - boolean
+  - Chooses whether the unit is synchronously connected to this node.
 - - unit__to_node
   - nox_emission_rate
   - null

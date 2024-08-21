@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## [0.4.0]
+
+### Added
+
+- years_represented parameter to the period class
+- Maximum and minimum investment limits for aggregated flow and storage capacities using sets (set has new parameters: invest_max_period, invest_max_total, invest_min_period, invest_min_total)
+- Maximum and minimum limits for the aggregated flows using sets (set has new parameters: max_cumulative_flow, max_instant_flow, min_cumulative_flow, min_instant_flow)
+- New class 'set__unit_flow' to replace 'set__node__unit'
+- Added inertia_constant for unit flows and inertia_limit for sets of nodes
+- Added is_non_synchronous for unit flows and links as well as non_synchronous_share for sets of nodes
+
+### Removed
+- Class 'set__node__unit' (replaced by 'set__unit_flow')
+
 ## [0.3.0]
 
 ### Added 
