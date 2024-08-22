@@ -346,28 +346,11 @@ parameter_definitions:
   - '[p.u.] Multiplier between constraints and the number of the links. Map of constraints
     and respective coefficients.'
 - - link
-  - cumulative_lower_limit
-  - null
-  - null
-  - '[Number] of transfer links that must at least exist (considers existing, invested
-    and retired units). Constant or array of periods.'
-- - link
-  - cumulative_upper_limit
-  - null
-  - null
-  - '[Number] of transfer links that can exist (considers existing, invested and retired
-    units). Constant or array of periods.'
-- - link
   - efficiency
   - null
   - null
   - '[p.u.] Efficiency of transfer in either direction. Not used by all link_tranfer_methods.
     Constant.'
-- - link
-  - existing_links
-  - null
-  - null
-  - '[Number] of existing transfer links.'
 - - link
   - fixed_cost
   - null
@@ -386,25 +369,10 @@ parameter_definitions:
   - null
   - '[CUR/MWh] Investment cost for the transfer capacity. Constant or array of periods.'
 - - link
-  - investment_fix
-  - null
-  - null
-  - '[Number] of links that must be invested in. Array of periods.'
-- - link
-  - investment_lower_limit
-  - null
-  - null
-  - '[Number] of links that must at least be invested in. Array of periods.'
-- - link
   - investment_method
   - null
   - link_invest_method
   - How investments are treated.
-- - link
-  - investment_upper_limit
-  - null
-  - null
-  - '[Number] of links that can be invested in. Array of periods.'
 - - link
   - is_non_synchronous
   - 'false'
@@ -418,16 +386,54 @@ parameter_definitions:
     \ when using retire_at_the_end_of_lifetime method. Constant or array of periods.\r\
     \n"
 - - link
+  - links_existing
+  - null
+  - null
+  - '[Number] of existing transfer links.'
+- - link
+  - links_fix_cumulative
+  - null
+  - null
+  - '[Number] of transfer links that must exist (considers existing, invested and
+    retired units). Constant or array of periods.'
+- - link
+  - links_invest_fix_period
+  - null
+  - null
+  - '[Number] of links that must be invested in. Array of periods.'
+- - link
+  - links_invest_max_period
+  - null
+  - null
+  - '[Number] of links that can be invested in. Array of periods.'
+- - link
+  - links_invest_min_period
+  - null
+  - null
+  - '[Number] of links that must at least be invested in. Array of periods.'
+- - link
+  - links_max_cumulative
+  - null
+  - null
+  - '[Number] of transfer links that can exist (considers existing, invested and retired
+    units). Constant or array of periods.'
+- - link
+  - links_min_cumulative
+  - null
+  - null
+  - '[Number] of transfer links that must at least exist (considers existing, invested
+    and retired units). Constant or array of periods.'
+- - link
+  - links_retire_period
+  - null
+  - null
+  - '[Number] of links that must be retired. Array of periods.'
+- - link
   - operational_cost
   - null
   - null
   - '[CUR/MWh] Variable cost for the flow. Applies in both directions when transfer_method
     includes costs. Constant or array of periods.'
-- - link
-  - retirement_fix
-  - null
-  - null
-  - '[Number] of links that must be retired. Array of periods.'
 - - link
   - retirement_method
   - null
@@ -503,11 +509,6 @@ parameter_definitions:
   - '[p.u.] Multiplier between constraints and the state of the storage. Map of constraints
     and respective coefficients.'
 - - node
-  - existing_storages
-  - null
-  - null
-  - '[Number] of storages at the start of the model.'
-- - node
   - flow_annual
   - null
   - null
@@ -545,18 +546,6 @@ parameter_definitions:
   - null
   - '[MWh] Capacity of one storage unit. Constant or array of periods.'
 - - node
-  - storage_cumulative_lower_limit
-  - null
-  - null
-  - '[Number] of storage units that must at least exist (considers existing, invested
-    and retired units). Constant or array of periods.'
-- - node
-  - storage_cumulative_upper_limit
-  - null
-  - null
-  - '[Number] of storage units that can exist (considers existing, invested and retired
-    units). Constant or array of periods.'
-- - node
   - storage_fixed_cost
   - null
   - null
@@ -574,25 +563,10 @@ parameter_definitions:
   - null
   - '[CUR/MWh] Investment cost for the storage capacity. Constant or array of periods.'
 - - node
-  - storage_investment_fix
-  - null
-  - null
-  - '[Number] of storage units that must be invested in. Array of periods.'
-- - node
-  - storage_investment_lower_limit
-  - null
-  - null
-  - '[Number] of storage units that must at least be invested in. Array of periods.'
-- - node
   - storage_investment_method
   - null
   - storage_investment_method
   - How investments are treated.
-- - node
-  - storage_investment_upper_limit
-  - null
-  - null
-  - '[Number] of storage units that can be invested in. Array of periods.'
 - - node
   - storage_lifetime
   - null
@@ -604,11 +578,6 @@ parameter_definitions:
   - null
   - profile_method
   - What limits are applied to the storage state.
-- - node
-  - storage_retirement_fix
-  - null
-  - null
-  - '[Number] of storage units that must be retired. Array of periods.'
 - - node
   - storage_retirement_method
   - null
@@ -637,6 +606,49 @@ parameter_definitions:
   - null
   - '[p.u.] Upper limit for the state of the storage. Time series, constant or array
     of periods.'
+- - node
+  - storages_existing
+  - null
+  - null
+  - '[Number] of storages at the start of the model.'
+- - node
+  - storages_fix_cumulative
+  - null
+  - null
+  - '[Number] of storage units that must exist (considers existing, invested and retired
+    units). Constant or array of periods.'
+- - node
+  - storages_invest_fix_period
+  - null
+  - null
+  - '[Number] of storage units that must be invested in. Array of periods.'
+- - node
+  - storages_invest_max_period
+  - null
+  - null
+  - '[Number] of storage units that can be invested in. Array of periods.'
+- - node
+  - storages_invest_min_period
+  - null
+  - null
+  - '[Number] of storage units that must at least be invested in. Array of periods.'
+- - node
+  - storages_max_cumulative
+  - null
+  - null
+  - '[Number] of storage units that can exist (considers existing, invested and retired
+    units). Constant or array of periods.'
+- - node
+  - storages_min_cumulative
+  - null
+  - null
+  - '[Number] of storage units that must at least exist (considers existing, invested
+    and retired units). Constant or array of periods.'
+- - node
+  - storages_retire_period
+  - null
+  - null
+  - '[Number] of storage units that must be retired. Array of periods.'
 - - node
   - x
   - null
@@ -836,6 +848,34 @@ parameter_definitions:
     provided in both directions, contingency means that the reserve requirement is
     based on the contingency_causing flows).
 - - set
+  - flow_max_cumulative
+  - null
+  - null
+  - '[MW] Maximum aggregated average flow for the set members (unit__to_node, node__to_unit,
+    link). The average value is multiplied by the model duration to get the cumulative
+    limit (e.g. by 8760 if a single year is modelled). Applied for each period. Constant
+    or map of periods.'
+- - set
+  - flow_max_instant
+  - null
+  - null
+  - '[MW] Maximum instantenous flow for the aggregated flow of all set members. Constant
+    or period.'
+- - set
+  - flow_min_cumulative
+  - null
+  - null
+  - '[MW] Maximum aggregated average flow for the set members (unit__to_node, node__to_unit,
+    link). The average value is multiplied by the model duration to get the cumulative
+    limit (e.g. by 8760 if a single year is modelled). Applied for each period. Constant
+    or map of periods.'
+- - set
+  - flow_min_instant
+  - null
+  - null
+  - '[MW] Minimum instantenous flow for the aggregated flow of all set members. Constant
+    or period.'
+- - set
   - inertia_limit
   - null
   - null
@@ -867,34 +907,6 @@ parameter_definitions:
   - '[MW or MWh] Minimum investment to the aggregated capacity of set member flows
     (unit__to_node, node__to_unit, link) and storage capacity. Applies in all periods.
     Constant.'
-- - set
-  - max_cumulative_flow
-  - null
-  - null
-  - '[MW] Maximum aggregated average flow for the set members (unit__to_node, node__to_unit,
-    link). The average value is multiplied by the model duration to get the cumulative
-    limit (e.g. by 8760 if a single year is modelled). Applied for each period. Constant
-    or map of periods.'
-- - set
-  - max_instant_flow
-  - null
-  - null
-  - '[MW] Maximum instantenous flow for the aggregated flow of all set members. Constant
-    or period.'
-- - set
-  - min_cumulative_flow
-  - null
-  - null
-  - '[MW] Maximum aggregated average flow for the set members (unit__to_node, node__to_unit,
-    link). The average value is multiplied by the model duration to get the cumulative
-    limit (e.g. by 8760 if a single year is modelled). Applied for each period. Constant
-    or map of periods.'
-- - set
-  - min_instant_flow
-  - null
-  - null
-  - '[MW] Minimum instantenous flow for the aggregated flow of all set members. Constant
-    or period.'
 - - set
   - network_type
   - null
@@ -1042,27 +1054,10 @@ parameter_definitions:
   - unit_conversion_method
   - What method to use when converting inputs to outputs.
 - - unit
-  - cumulative_lower_limit
-  - null
-  - null
-  - '[Number] of units that must at least exist (considers existing, invested and
-    retired units). Constant or array of periods.'
-- - unit
-  - cumulative_upper_limit
-  - null
-  - null
-  - '[Number] of units that can exist (considers existing, invested and retired units).
-    Constant or array of periods.'
-- - unit
   - efficiency
   - null
   - null
   - '[p.u.] Multiplier for turning inputs to outputs. Usage depends on the conversion_method.'
-- - unit
-  - existing_units
-  - null
-  - null
-  - '[Number] of existing units.'
 - - unit
   - interest_rate
   - null
@@ -1070,36 +1065,16 @@ parameter_definitions:
   - '[e.g. 0.05] is 5 %. Interest rate for investing in the unit. Constant or array
     of periods.'
 - - unit
-  - investment_fix
-  - null
-  - null
-  - '[Number] of units that must be invested in. Array of periods.'
-- - unit
-  - investment_lower_limit
-  - null
-  - null
-  - '[Number] of units that must at least be invested in. Array of periods.'
-- - unit
   - investment_method
   - null
   - unit_invest_method
   - How investments are treated.
-- - unit
-  - investment_upper_limit
-  - null
-  - null
-  - '[Number] of units that can be invested in. Array of periods.'
 - - unit
   - lifetime
   - null
   - null
   - '[years] Lifetime of the unit for annuity calculation and for retirement decision
     depending on the unit_retirement_method. Constant or array of periods.'
-- - unit
-  - retirement_fix
-  - null
-  - null
-  - '[Number] of units that must be retired. Array of periods.'
 - - unit
   - retirement_method
   - null
@@ -1120,6 +1095,49 @@ parameter_definitions:
   - null
   - unit_startup_method
   - What method is used for unit startups.
+- - unit
+  - units_existing
+  - null
+  - null
+  - '[Number] of existing units.'
+- - unit
+  - units_fix_cumulative
+  - null
+  - null
+  - '[Number] of units that must exist (considers existing, invested and retired units).
+    Constant or array of periods.'
+- - unit
+  - units_invest_fix_period
+  - null
+  - null
+  - '[Number] of units that must be invested in. Array of periods.'
+- - unit
+  - units_invest_max_period
+  - null
+  - null
+  - '[Number] of units that can be invested in. Array of periods.'
+- - unit
+  - units_invest_min_period
+  - null
+  - null
+  - '[Number] of units that must at least be invested in. Array of periods.'
+- - unit
+  - units_max_cumulative
+  - null
+  - null
+  - '[Number] of units that can exist (considers existing, invested and retired units).
+    Constant or array of periods.'
+- - unit
+  - units_min_cumulative
+  - null
+  - null
+  - '[Number] of units that must at least exist (considers existing, invested and
+    retired units). Constant or array of periods.'
+- - unit
+  - units_retire_period
+  - null
+  - null
+  - '[Number] of units that must be retired. Array of periods.'
 - - unit
   - x
   - null
@@ -1306,15 +1324,19 @@ parameter_value_lists:
 - - link_invest_method
   - not_allowed
 - - link_invest_method
-  - limit_total_capacity
-- - link_invest_method
   - no_limits
+- - link_invest_method
+  - cumulative_limits
+- - link_invest_method
+  - period_limits
+- - link_invest_method
+  - cumulative_and_period_limits
+- - link_invest_method
+  - fix_investments
 - - link_retirement_method
   - not_retired
 - - link_retirement_method
   - economic_retirement
-- - link_retirement_method
-  - retire_at_the_end_of_lifetime
 - - link_retirement_method
   - retire_as_scheduled
 - - link_retirement_method
@@ -1386,15 +1408,19 @@ parameter_value_lists:
 - - storage_investment_method
   - not_allowed
 - - storage_investment_method
-  - limit_total_capacity
-- - storage_investment_method
   - no_limits
+- - storage_investment_method
+  - cumulative_limits
+- - storage_investment_method
+  - period_limits
+- - storage_investment_method
+  - cumulative_and_period_limits
+- - storage_investment_method
+  - fix_investments
 - - storage_retirement_method
   - not_retired
 - - storage_retirement_method
   - economic_retirement
-- - storage_retirement_method
-  - retire_at_end_of_lifetime
 - - storage_retirement_method
   - retire_as_scheduled
 - - storage_retirement_method
@@ -1414,15 +1440,19 @@ parameter_value_lists:
 - - unit_invest_method
   - not_allowed
 - - unit_invest_method
-  - limit_total_capacity
-- - unit_invest_method
   - no_limits
+- - unit_invest_method
+  - cumulative_limits
+- - unit_invest_method
+  - period_limits
+- - unit_invest_method
+  - cumulative_and_period_limits
+- - unit_invest_method
+  - fix_investments
 - - unit_retirement_method
   - not_retired
 - - unit_retirement_method
   - economic_retirement
-- - unit_retirement_method
-  - retire_at_the_end_of_lifetime
 - - unit_retirement_method
   - retire_as_scheduled
 - - unit_retirement_method
