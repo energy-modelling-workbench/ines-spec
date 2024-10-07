@@ -14,14 +14,15 @@ The INES Specification is designed to support the seamless exchange of energy sy
 
 ## Installation
 
-To use the INES Specification, you need to have Spine Toolbox v0.8 or later installed. You can download Spine Toolbox from the official Spine Toolbox repository.
+To use the INES Specification, you need to have Spine Toolbox v0.8 or later installed. You can download Spine Toolbox from the official [Spine Toolbox repository](https://github.com/spine-tools/Spine-Toolbox).
 
 ## Usage
 
-1. **Importing Data**: Use the Spine Toolbox to import data into the `ines-spec.sqlite` database.
-2. **Exporting Data**: Export data from the `ines-spec.sqlite` database to JSON or YAML formats for use with other tools.
-3. **Data Conversion**: Convert data between different modeling tools using the INES Specification.
-
+- **Edit data yourself** Use Spine Toolbox database editor to add and edit data
+- **Transform existing model data to ines** Use one of the adjacent repositories (e.g. ines-osemosys) to translate an existing energy system model to the ines format
+- **Transform ines data to energy system model format** Use one of the adjacent repositories (e.g. ines-flextool) to translate data from the ines format to an existing energy system model format
+- **Use data pipelines** The adjacent repository data-pipelines has scripts and data sources that can be imported to ines-spec to create a model instance
+ 
 ## Contributing
 
 We welcome contributions to the INES Specification. Please follow these steps to contribute:
